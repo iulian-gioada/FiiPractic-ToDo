@@ -17,6 +17,7 @@ angular.module('todo')
        }
        
        function addNewItem (item) {
+           item.dueDate = new Date(item.dueDate);
            items.push(item);
        };
        

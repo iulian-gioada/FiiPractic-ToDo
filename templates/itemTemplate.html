@@ -1,0 +1,8 @@
+<div>
+    <span class="index">{{index+1}}</span>
+    <span class="complete">
+        <input type="checkbox" ng-checked="{{item.complete}}"/>
+    </span>
+    <span class="title">{{item.title}}</span>
+    <span class="date">{{item.dueDate | date: "dd/MM/yyyy"}}</span>
+</div>
