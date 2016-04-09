@@ -1,0 +1,40 @@
+<div class="row">
+    <h1>{{title}}</h1>
+    <div class="col-sm-6 col-sm-offset-3">
+        <p class="col-sm-12">
+            <input type="text" ng-model="addItem.title" placeholder="title" class="form-control" />
+        </p>
+        <p class="col-sm-12">
+            <input type="text" ng-model="addItem.description" placeholder="description" class="form-control" />
+        </p>
+        <p class="col-sm-6">
+            <input type="date" ng-model="addItem.dueDate" placeholder="due date" class="form-control" />
+        </p>
+        <p class="col-sm-6">
+            <select name="multipleSelect" id="multipleSelect" ng-model="addItem.category">
+                <option value="{{item}}" ng-repeat="item in categoriesList track by $index">{{item}}</option>
+            </select>
+        </p>
+        <p class="col-sm-12">
+            <button class="btn btn-primary" ng-click="addNewItem()" ng-disabled="addItem.title.length === 0">Add</button>
+            <a href="#/categories" class="btn btn-warning pull-right"> Manage Categories</a>
+        </p>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in itemsFactory.getItems() track by $index">
+                <div>
+                    <span class="index">{{$index+1}}</span>
+                    <span class="complete">
+                                    <input type="checkbox" ng-checked="{{item.complete}}"/>
+                                </span>
+                    <span class="title">{{item.title}}</span>
+                    <span class="date">{{item.dueDate | date: 'dd/MM/yyyy'}}</span>
+                    <br/>
+                    <span class="categories">  Category: {{item.category}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
