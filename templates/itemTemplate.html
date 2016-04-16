@@ -1,0 +1,10 @@
+<div>
+    <span class="index">{{index+1}}</span>
+    <span class="complete">
+        <input type="checkbox" ng-checked="{{item.complete}}" ng-model="item.complete"/>
+    </span>
+    <span class="title" ng-class="{'completed': item.complete}">{{item.title}}</span>
+    <span class="date">{{item.dueDate | date: "dd/MM/yyyy"}}</span>
+    <br/>
+    <span class="categories">  Category: {{item.category}}</span>
+</div>

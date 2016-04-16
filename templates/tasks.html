@@ -22,17 +22,12 @@
     </div>
     <div class="col-sm-6 col-sm-offset-3">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="item in itemsFactory.getItems() track by $index">
-                <div>
-                    <span class="index">{{$index+1}}</span>
-                    <span class="complete">
-                                    <input type="checkbox" ng-checked="{{item.complete}}"/>
-                                </span>
-                    <span class="title">{{item.title}}</span>
-                    <span class="date">{{item.dueDate | date: 'dd/MM/yyyy'}}</span>
-                    <br/>
-                    <span class="categories">  Category: {{item.category}}</span>
-                </div>
+            <li class="list-group-item" 
+                todo-item 
+                item="item" 
+                index="$index" 
+                removeFn="itemsFactory.remove($index)" 
+                ng-repeat="item in itemsFactory.getItems() track by $index">
             </li>
         </ul>
     </div>

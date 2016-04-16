@@ -7,6 +7,10 @@
             [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
                 display: none !important;
             }
+            
+            .completed {
+                text-decoration: line-through;
+            }
         </style>
     </head>
     <body ng-app="todo" class="ng-cloak">
@@ -16,7 +20,8 @@
         <script src="lib/angular.js" type="text/javascript"></script>
         <script src="lib/angular-route.js" type="text/javascript"></script>
         <script src="app/app.js" type="text/javascript"></script>
-        <script src="app/services.js" type="text/javascript"></script>        
+        <script src="app/services.js" type="text/javascript"></script>
+        <script src="app/directives.js" type="text/javascript"></script>                        
         <script src="app/controllers.js" type="text/javascript"></script>           
     </body>
 </html>

@@ -20,13 +20,19 @@ function itemsFactory() {
     }
 
     function addNewItem(item) {
+        item.dueDate = new Date(item.dueDate);        
         items.push(item);
     };
+    
+    function removeItem(index) {
+        items.splice(index, 1);
+    }
 
     return {
         createItem: createItem,
         getItems: getItems,
-        addNewItem: addNewItem
+        addNewItem: addNewItem,
+        removeItem: removeItem
     }
 };
 
